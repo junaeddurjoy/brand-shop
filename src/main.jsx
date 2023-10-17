@@ -6,11 +6,21 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import AddItem from './components/AddItem.jsx';
+import UpdateItem from './components/UpdateItem.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+  },
+  {
+    path: "/addItem",
+    element: <AddItem></AddItem>,
+  },
+  {
+    path: "/updateItem",
+    element: <UpdateItem></UpdateItem>,
   },
 ]);
 
