@@ -11,29 +11,30 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-4 justify-center items-center lg:gap-5 mx-3 text-md font-bold">
-                    
+                    <Link to={'/'}>
                         <div className="hover:bg-gray-300 lg:p-3 w-auto text-center rounded-full">
-                        <Link to={'/'}> Home</Link>
+                            Home
                         </div>
-                    
-                    
+
+                    </Link>
+                    <Link to={'/addProduct'}>
                         <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
-                        <Link to={'/addProduct'}>Add Product </Link>
+                            Add Product
                         </div>
-                   
-                    
+                    </Link>
+                    <Link to={'/addProduct'}>
                         <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
-                        <Link to={'/addProduct'}> Cart </Link>
+                            Cart
                         </div>
-                   
-                    
+                    </Link>
+                    <Link to={'/addProduct'}>
                         <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
-                        <Link to={'/addProduct'}> Log In</Link>
+                            Log In
                         </div>
-                    
-                </div>
+                    </Link>
                 </div>
             </div>
+        </div>
 
     );
 };
