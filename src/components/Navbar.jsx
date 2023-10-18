@@ -27,7 +27,7 @@ const Navbar = () => {
                             Cart
                         </div>
                     </Link>
-                    <Link to={'/addProduct'}>
+                    <Link to={'/products'}>
                         <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
                             Log In
                         </div>
