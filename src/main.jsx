@@ -9,15 +9,22 @@ import Home from './pages/Home.jsx';
 import AddProduct from './pages/AddProduct';
 import UpdateProduct from './pages/UpdateProduct';
 import Products from './pages/Products';
+import Cart from './pages/Cart';
+import ProductDetails from './pages/ProductDetails';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    loader: () => fetch('http://localhost:5000/product')
   },
   {
     path: "/addProduct",
     element: <AddProduct></AddProduct>,
+  },
+  {
+    path: "/cart",
+    element: <Cart></Cart>,
   },
   {
     path: "/updateProduct/:id",
@@ -28,6 +35,11 @@ const router = createBrowserRouter([
     path: "/products",
     element: <Products></Products>,
     loader: () => fetch('http://localhost:5000/product')
+  },
+  {
+    path: "/product/:id",
+    element: <ProductDetails></ProductDetails>,
+    loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
   },
 ]);
 

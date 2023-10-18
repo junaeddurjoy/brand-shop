@@ -22,7 +22,7 @@ const Navbar = () => {
                             Add Product
                         </div>
                     </Link>
-                    <Link to={'/addProduct'}>
+                    <Link to={'/cart'}>
                         <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
                             Cart
                         </div>
