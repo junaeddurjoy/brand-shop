@@ -11,7 +11,7 @@ const AddProduct = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 lg:ml-32 justify-around">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-xl">Nae</span>
+                                <span className="label-text text-xl">Name</span>
                             </label>
                             <label className="input-group">
                                 <span>Name</span>
