@@ -8,6 +8,7 @@ import {
 import Home from './pages/Home.jsx';
 import AddProduct from './pages/AddProduct';
 import UpdateProduct from './pages/UpdateProduct';
+import Products from './pages/Products';
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,14 @@ const router = createBrowserRouter([
     element: <AddProduct></AddProduct>,
   },
   {
-    path: "/updateProduct",
+    path: "/updateProduct/:id",
     element: <UpdateProduct></UpdateProduct>,
+    loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+  },
+  {
+    path: "/products",
+    element: <Products></Products>,
+    loader: () => fetch('http://localhost:5000/product')
   },
 ]);
 
