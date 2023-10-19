@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { AuthContext } from "../pages/provider/AuthProvider";
+// import { BiUserCircle } from 'react-icons/bi'
+
 
 const Navbar = () => {
+    const { user, logout } = useContext(AuthContext);
+    console.log('this is user',user);
+    // eslint-disable-next-line no-unused-vars
+    const handleSignOut = e => {
+        logout()
+            .then()
+            .catch()
+    }
     return (
         <div>
             <div className="navbar bg-base-300">
@@ -29,9 +41,17 @@ const Navbar = () => {
                     </Link>
                     <Link to={'/products'}>
                         <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
-                            Log In
+                            Product
                         </div>
                     </Link>
+                    {
+                            user ?
+                                <button onClick={handleSignOut} className='hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full'>Log Out</button>
+                                :
+                                <Link to={'/login'}>
+                                    <button className='hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full'>Login</button>
+                                </Link>
+                        }
                 </div>
             </div>
         </div>
