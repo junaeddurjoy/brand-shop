@@ -2,13 +2,21 @@ import { useLoaderData} from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ProductCard from "./ProductCard";
+import dummyData from '../../public/brands.json'
 
 const BrandProducts = () => {
-    
     const products = useLoaderData();
+    let bname = products[0].brand;
+    
+
     return (
         <div>
             <Navbar></Navbar>
+            <div>
+                {
+                    
+                }
+            </div>
             <h1 className="text-3xl mt-14 font-pacifico font-bold mx-10">Products:</h1>
             <div className="grid grid-cols-1 lg:grid-cols-4 mb-14 mt-7 mx-10">
                 {

@@ -9,12 +9,10 @@ const SignUp = () => {
     const {createUser} = useContext(AuthContext);
     const handleRegister = e => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const name= form.get('username');
         const email = form.get('email');
         const password = form.get('password');
-        console.log(name,email,password)
         setregError('')
         setregSuccess('')
 

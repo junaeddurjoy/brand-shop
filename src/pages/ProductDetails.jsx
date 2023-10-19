@@ -8,7 +8,6 @@ const ProductDetails = () => {
     const { name, image, brand, type, price, rating, description } = product;
     const handleCart = () => {
         const newCart = { name, image, brand, type, price, rating, description };
-        console.log(newCart)
         fetch('http://localhost:5000/cart', {
             method: 'POST',
             headers: {

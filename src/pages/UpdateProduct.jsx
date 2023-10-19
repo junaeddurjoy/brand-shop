@@ -6,10 +6,10 @@ import Swal from "sweetalert2";
 const UpdateProduct = () => {
     const product = useLoaderData();
     const { _id, name, image, brand, type, price, rating, description } = product;
+    console.log('update korbo',product)
 
     const handleUpdateProduct = event => {
         event.preventDefault();
-
         const form = event.target;
         const name = form.name.value;
         const image = form.image.value;
@@ -18,9 +18,7 @@ const UpdateProduct = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const description = form.description.value;
-
         const updatedProduct = { name, image, brand, type, price, rating, description };
-        console.log(updatedProduct)
         fetch(`http://localhost:5000/product/${_id}`, {
             method: 'PUT',
             headers: {

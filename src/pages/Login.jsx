@@ -12,18 +12,15 @@ const Login = () => {
     const navigate = useNavigate();
     const handleLogin = e => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
         setloginError('');
         signIn(email,password)
         .then(result => {
-            console.log(result.user);
             navigate(location?.state? location.state: '/')
         })
         .catch(error =>{
-            console.error(error)
             setloginError(error.message)
         })
     }

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 const ProductCard = ({ product }) => {
     const {_id, name, image} = product;
-
+    console.log('idddddddddddddddddddddd',_id);
     return (
         <div>
             <div className="card my-5 w-80 glass">
