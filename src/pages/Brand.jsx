@@ -19,7 +19,7 @@ const Brand = () => {
                     brand.map(brand => <div key={brand.id}>
                         <div>
                             <div className="h-36 w-56">
-                                <Link to={'/products'}>
+                                <Link to={`/brandproducts/${brand.name}`}>
                                     <img className="h-32" src={brand.image} alt="" />
                                     <h2 className="text-xl font-bold text-center">{brand.name}</h2>
                                 </Link>

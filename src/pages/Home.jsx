@@ -4,10 +4,8 @@ import Navbar from "../components/Navbar";
 import { BsPhone, BsLaptop, BsCameraReels } from 'react-icons/bs'
 import { HiOutlineComputerDesktop } from 'react-icons/hi2'
 import Brand from "./Brand";
-// import Marquee from "react-fast-marquee";
-// import { Link } from "react-router-dom";
-const Home = () => {
 
+const Home = () => {
     return (
         <div>
             <Navbar></Navbar>

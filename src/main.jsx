@@ -14,6 +14,9 @@ import Cart from './pages/Cart';
 import ProductDetails from './pages/ProductDetails';
 import SignUp from './pages/SignUp';
 import AuthProvider from './pages/provider/AuthProvider';
+import BrandProducts from './pages/BrandProducts';
+import PrivateRoutes from './PrivateRoutes';
+// import Brand from './pages/Brand';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,11 @@ const router = createBrowserRouter([
     element: <Home></Home>,
     loader: () => fetch('http://localhost:5000/product')
   },
+  // {
+  //   path: "/",
+  //   element: <Brand></Brand>,
+  //   loader: () => fetch('http://localhost:5000/product')
+  // },
   {
     path: "/addProduct",
     element: <AddProduct></AddProduct>,
@@ -35,7 +43,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <Cart></Cart>,
+    element: <PrivateRoutes><Cart></Cart></PrivateRoutes>,
     loader: () => fetch('http://localhost:5000/cart')
   },
   {
@@ -47,6 +55,11 @@ const router = createBrowserRouter([
     path: "/products",
     element: <Products></Products>,
     loader: () => fetch('http://localhost:5000/product')
+  },
+  {
+    path: "/brandproducts/:brand",
+    element: <BrandProducts></BrandProducts>,
+    loader: () => fetch(`http://localhost:5000/product`)
   },
   {
     path: "/product/:id",
