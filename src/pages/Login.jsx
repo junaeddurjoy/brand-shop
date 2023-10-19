@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "./provider/AuthProvider";
+import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
     const [loginError, setloginError] = useState('')
@@ -57,6 +58,9 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-3">
                                 <button type="submit" className="btn btn-primary bg-black hover:bg-white hover:text-black">Login</button>
+                            </div>
+                            <div className="form-control mt-3">
+                                <button type="submit" className="btn btn-primary bg-white text-black hover:bg-white hover:text-black">Login With Google <FcGoogle className="text-2xl font-bold"></FcGoogle></button>
                             </div>
                         </form>
                         {
