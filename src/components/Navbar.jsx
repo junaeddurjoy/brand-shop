@@ -11,7 +11,8 @@ import { FcHome, FcAddDatabase } from 'react-icons/fc'
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
-    console.log('this is user',user);
+    console.log('this is userrrrrrrrrrrrr', user);
+    // console.log(user.photoURL)
     // eslint-disable-next-line no-unused-vars
     const handleSignOut = e => {
         logout()
@@ -48,15 +49,23 @@ const Navbar = () => {
                         <div className="hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center rounded-full">
                             All Products<AiOutlineShopping className="text-xl text-purple-400"></AiOutlineShopping>
                         </div>
+
                     </Link>
+                    
+                    {/* <Link>
+                        <div>
+                            {user.displayName}
+                        </div>
+                        <img src={user.photoURL} alt="" />
+                    </Link> */}
                     {
-                            user ?
-                                <button onClick={handleSignOut} className='hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center rounded-full'>Log Out<RiLogoutBoxRFill className="text-xl"></RiLogoutBoxRFill></button>
-                                :
-                                <Link to={'/login'}>
-                                    <button className='hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center rounded-full'>Login<RiLogoutBoxFill></RiLogoutBoxFill></button>
-                                </Link>
-                        }
+                        user ?
+                            <button onClick={handleSignOut} className='hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center rounded-full'>Log Out<RiLogoutBoxRFill className="text-xl"></RiLogoutBoxRFill></button>
+                            :
+                            <Link to={'/login'}>
+                                <button className='hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center rounded-full'>Login<RiLogoutBoxFill></RiLogoutBoxFill></button>
+                            </Link>
+                    }
                 </div>
             </div>
         </div>
