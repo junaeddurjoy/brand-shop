@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from "../pages/provider/AuthProvider";
-// import { BiUserCircle } from 'react-icons/bi'
+// import { BiUserCircle } from 'react-icons/ai'
+import { RiLogoutBoxRFill, RiLogoutBoxFill } from 'react-icons/ri'
+
+import { AiOutlineShopping } from 'react-icons/ai'
+import { FaShoppingCart } from 'react-icons/fa'
+import { FcHome, FcAddDatabase } from 'react-icons/fc'
 
 
 const Navbar = () => {
@@ -22,34 +27,34 @@ const Navbar = () => {
                         <a className="btn btn-ghost normal-case text-2xl font-varela">IT Haatt</a>
                     </Link>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-4 justify-center items-center lg:gap-5 mx-3 text-md font-bold">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-3 lg:gap-0 justify-center items-center  mx-3 text-md font-bold">
                     <Link to={'/'}>
-                        <div className="hover:bg-gray-300 lg:p-3 w-auto text-center rounded-full">
-                            Home
+                        <div className="hover:bg-gray-300 lg:p-3 flex items-center gap-2  w-auto text-center rounded-full">
+                            Home<FcHome className="text-xl"></FcHome>
                         </div>
 
                     </Link>
                     <Link to={'/addProduct'}>
-                        <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
-                            Add Product
+                        <div className="hover:bg-gray-300 lg:p-3 flex items-center w-auto text-center  rounded-full">
+                            Add Product<FcAddDatabase className="text-xl"></FcAddDatabase>
                         </div>
                     </Link>
                     <Link to={'/cart'}>
-                        <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
-                            Cart
+                        <div className="hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center  rounded-full">
+                            Cart<FaShoppingCart className="text-xl text-orange-500"></FaShoppingCart>
                         </div>
                     </Link>
                     <Link to={'/products'}>
-                        <div className="hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full">
-                            Product
+                        <div className="hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center rounded-full">
+                            All Products<AiOutlineShopping className="text-xl text-purple-400"></AiOutlineShopping>
                         </div>
                     </Link>
                     {
                             user ?
-                                <button onClick={handleSignOut} className='hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full'>Log Out</button>
+                                <button onClick={handleSignOut} className='hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center rounded-full'>Log Out<RiLogoutBoxRFill className="text-xl"></RiLogoutBoxRFill></button>
                                 :
                                 <Link to={'/login'}>
-                                    <button className='hover:bg-gray-300 lg:p-3 w-auto text-center  rounded-full'>Login</button>
+                                    <button className='hover:bg-gray-300 lg:p-3 w-auto text-center flex items-center rounded-full'>Login<RiLogoutBoxFill></RiLogoutBoxFill></button>
                                 </Link>
                         }
                 </div>
